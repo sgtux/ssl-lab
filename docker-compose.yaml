@@ -1,0 +1,20 @@
+version: "3"
+services:
+
+    storage:
+        image: sgtux/storage-ssllab
+        networks:
+            lan:
+                ipv4_address: 172.50.50.10
+
+    threat:
+        image: sgtux/threat-ssllab
+        networks:
+            lan:
+                ipv4_address: 172.50.50.20
+
+networks:
+    lan:
+        ipam:
+            config:
+                - subnet: 172.50.50.0/24
